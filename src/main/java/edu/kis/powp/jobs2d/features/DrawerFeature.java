@@ -1,5 +1,7 @@
 package edu.kis.powp.jobs2d.features;
 
+import edu.kis.legacy.drawer.shape.ILine;
+import edu.kis.legacy.drawer.shape.LineFactory;
 import edu.kis.powp.appbase.Application;
 import edu.kis.powp.jobs2d.events.SelectClearPanelOptionListener;
 import edu.kis.legacy.drawer.panel.DrawPanelController;
@@ -25,10 +27,14 @@ public class DrawerFeature {
 
 	/**
 	 * Get controller of application drawing panel.
-	 * 
+	 *
 	 * @return drawPanelController.
 	 */
+
 	public static DrawPanelController getDrawerController() {
+		ILine line = LineFactory.getBasicLine();
+		drawerController.drawLine(line);
+
 		return drawerController;
 	}
 }
